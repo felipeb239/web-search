@@ -1,0 +1,348 @@
+/* Reset e configurações básicas */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Container principal */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+/* Cabeçalho */
+.header {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    color: white;
+    padding: 30px;
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    font-weight: 300;
+}
+
+.header p {
+    font-size: 1.1em;
+    opacity: 0.9;
+}
+
+/* Conteúdo principal */
+.main-content {
+    padding: 40px;
+}
+
+/* Seções */
+.section {
+    margin-bottom: 40px;
+    padding: 30px;
+    border-radius: 10px;
+    background: #f8f9fa;
+    border-left: 4px solid #4facfe;
+}
+
+.section h2 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    display: flex;
+    align-items: center;
+}
+
+.section h2::before {
+    content: "📁";
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+/* Área de upload */
+.upload-area {
+    border: 2px dashed #4facfe;
+    border-radius: 10px;
+    padding: 40px;
+    text-align: center;
+    background: white;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.upload-area:hover {
+    border-color: #00f2fe;
+    background: #f0f8ff;
+}
+
+.upload-area.dragover {
+    border-color: #00f2fe;
+    background: #e6f3ff;
+    transform: scale(1.02);
+}
+
+.upload-icon {
+    font-size: 3em;
+    color: #4facfe;
+    margin-bottom: 15px;
+}
+
+.upload-text {
+    color: #666;
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+.file-input {
+    display: none;
+}
+
+.upload-btn {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 15px;
+}
+
+.upload-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(79, 172, 254, 0.3);
+}
+
+/* Caixa de busca */
+.search-box {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.search-input {
+    flex: 1;
+    padding: 15px 20px;
+    border: 2px solid #e1e5e9;
+    border-radius: 25px;
+    font-size: 1em;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.search-input:focus {
+    border-color: #4facfe;
+}
+
+.search-btn {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 25px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.search-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(79, 172, 254, 0.3);
+}
+
+/* Resultados */
+.results {
+    margin-top: 20px;
+}
+
+.result-item {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    border-left: 4px solid #4facfe;
+    transition: transform 0.3s ease;
+}
+
+.result-item:hover {
+    transform: translateY(-2px);
+}
+
+.result-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.result-title {
+    font-weight: 600;
+    color: #333;
+    font-size: 1.1em;
+}
+
+.result-type {
+    background: #e3f2fd;
+    color: #1976d2;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.8em;
+    font-weight: 500;
+}
+
+.result-meta {
+    color: #666;
+    font-size: 0.9em;
+    margin-bottom: 8px;
+}
+
+.result-match {
+    background: #fff3e0;
+    color: #f57c00;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.8em;
+    font-weight: 500;
+}
+
+/* Lista de arquivos */
+.file-list {
+    display: grid;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.file-item {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    border-left: 4px solid #4facfe;
+}
+
+.file-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.file-name {
+    font-weight: 600;
+    color: #333;
+}
+
+.file-type {
+    background: #e3f2fd;
+    color: #1976d2;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.8em;
+}
+
+.file-info {
+    color: #666;
+    font-size: 0.9em;
+}
+
+/* Alertas */
+.alert {
+    padding: 15px;
+    border-radius: 8px;
+    margin: 20px 0;
+    font-weight: 500;
+}
+
+.alert-success {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.alert-error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Loading */
+.loading {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+}
+
+.spinner {
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #4facfe;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 15px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Estatísticas */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.stat-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.stat-number {
+    font-size: 2em;
+    font-weight: bold;
+    color: #4facfe;
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    color: #666;
+    font-size: 0.9em;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .main-content {
+        padding: 20px;
+    }
+    
+    .search-box {
+        flex-direction: column;
+    }
+    
+    .header h1 {
+        font-size: 2em;
+    }
+    
+    .stats {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Busca de Arquivos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔍 Sistema de Busca de Arquivos</h1>
+            <p>Envie, indexe e encontre documentos Word e PDF rapidamente</p>
+        </div>
+
+        <div class="main-content">
+            <!-- Estatísticas -->
+            <div class="stats" id="stats">
+                <div class="stat-card">
+                    <div class="stat-number" id="total-files">0</div>
+                    <div class="stat-label">Arquivos Indexados</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="total-docx">0</div>
+                    <div class="stat-label">Documentos Word</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="total-pdf">0</div>
+                    <div class="stat-label">Arquivos PDF</div>
+                </div>
+            </div>
+
+            <!-- Upload de Arquivos -->
+            <div class="section">
+                <h2>Enviar Arquivos</h2>
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-icon">📤</div>
+                    <div class="upload-text">
+                        <strong>Clique aqui</strong> ou arraste arquivos Word (.docx) e PDF aqui
+                    </div>
+                    <div style="color: #999; font-size: 0.9em; margin-top: 10px;">
+                        Tamanho máximo: 16MB
+                    </div>
+                    <input type="file" id="fileInput" class="file-input" accept=".docx,.pdf" multiple>
+                    <button class="upload-btn" onclick="document.getElementById('fileInput').click()">
+                        Selecionar Arquivos
+                    </button>
+                </div>
+                <div id="uploadStatus"></div>
+            </div>
+
+            <!-- Busca -->
+            <div class="section">
+                <h2>Buscar Arquivos</h2>
+                <div class="search-box">
+                    <input type="text" id="searchInput" class="search-input" 
+                           placeholder="Digite o que você está procurando...">
+                    <button class="search-btn" onclick="window.app.performSearch()">
+                        🔍 Buscar
+                    </button>
+                </div>
+                <div id="searchResults"></div>
+            </div>
+
+            <!-- Lista de Arquivos -->
+            <div class="section">
+                <h2>Arquivos Indexados</h2>
+                <div id="fileList"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/app.js')}}"></script>
+</body>
+</html>
